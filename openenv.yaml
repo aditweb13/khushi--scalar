@@ -1,0 +1,25 @@
+version: "1.0"
+name: "smartrecco-env"
+description: "E-commerce product recommendation curation environment. An agent acts as a recommendation curator, analyzing user profiles and selecting products."
+tasks:
+  - id: "easy_single_category"
+    description: "Recommend 5 sci-fi books to a known sci-fi lover. Focus on relevance."
+    difficulty: "easy"
+    max_steps: 5
+    score_range: [0.0, 1.0]
+  - id: "medium_multi_constrained"
+    description: "Recommend 8 products across categories with a budget constraint of $200 and diversity constraints."
+    difficulty: "medium"
+    max_steps: 10
+    score_range: [0.0, 1.0]
+  - id: "hard_coldstart_adaptive"
+    description: "Cold-start user: ask questions to discover preferences, then recommend 10 products within a $500 budget."
+    difficulty: "hard"
+    max_steps: 15
+    score_range: [0.0, 1.0]
+observation_space:
+  type: "Observation"
+  module: "models"
+action_space:
+  type: "Action"
+  module: "models"
